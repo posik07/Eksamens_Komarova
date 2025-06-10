@@ -85,6 +85,40 @@ public class Piemers2 {
 	                		", Vecums: " + getVecums() + " gadi,"
 	                				+ " Tips: " + tips);
 	        }
-	}
+	            
+	         // Pārraksta ēšanas metodi
+	            @Override
+	            public void est() {
+	                System.out.println(getVards() + " ēd zivi.");
+	            }
+	        }
+	        
+	        
+	        public static void main(String[] args) {
+	            // Izveidojam dažādus dzīvniekus
+	            Dzivnieks dzīvnieks = new Dzivnieks("Nezināms dzīvnieks", 5);// bāzes klases objekts
+	            Suns suns = new Suns("Reksis", 3, "Vācijas aitu suns");// apakšklases objekts
+	            Kakis kaķis = new Kakis("Muris", 2, true); // vēl vienas apakšklases objekts
 
+	            // Parādām informāciju par katru dzīvnieku
+	            dzīvnieks.paraditInfo();// izsauc bāzes klases metodi
+	            dzīvnieks.est(); // vispārīga ēšanas metode
+	            dzīvnieks.gulet();// vispārīga gulēšanas metode
+
+	            System.out.println(); // tukša rindiņa
+
+	            suns.paraditInfo(); // izsauc pārrakstīto metodi
+	            suns.est();// mantotā metode no bāzes klases
+	            suns.riet();// specifiska suņa metode
+	            suns.gulet();// mantotā metode
+
+	            System.out.println(); 
+	            kaķis.paraditInfo();// pārrakstītā metode
+	            kaķis.est();// pārrakstītā ēšanas metode
+	            kaķis.maukat();// specifiska kaķa metode
+	            kaķis.gulet();// mantotā metode
+	        }
+
+
+}
 }
