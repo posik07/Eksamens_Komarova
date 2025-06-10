@@ -67,16 +67,23 @@ public class Piemers1 {
  
 
 		}
-		
+		// Galvenā metode programmas palaišanai 
 		public static void main(String[] args) {
+			// Veidojam divas mašīnas objektus, izmantojot konstruktoru
 			Automasina auto1 = new Automasina("BMW", "X5", 2020);
 			Automasina auto2 = new Automasina("Audi", "A4", 2019);
 			
+			// Izveidojam Scanner objektu, lai varētu nolasīt lietotāja ievadi no tastatūras
 			Scanner scanner = new Scanner(System.in);
 			
+			System.out.println("\nSākotnējā informācija:");
+		    auto1.izvaditInfo();
+		    auto2.izvaditInfo();
+			
+		 // Lūdzam lietotājam ievadīt, par cik km/h paātrināt automašīnu
 			System.out.print("\nIevadiet, par cik km/h paātrināt BMW: ");
-		    double paatrinajums1 = scanner.nextDouble();
-		    auto1.paatrinatAt(paatrinajums1);
+		    double paatrinajums1 = scanner.nextDouble(); // Nolasām paātrinājuma vērtību
+		    auto1.paatrinatAt(paatrinajums1);// Izsaucam paātrināšanas metodi ar ievadīto vērtību
 
 		    System.out.print("Ievadiet, par cik km/h paātrināt Audi: ");
 		    double paatrinajums2 = scanner.nextDouble();
@@ -85,7 +92,7 @@ public class Piemers1 {
 		    // Lietotāja ievade bremzēšanai
 		    System.out.print("\nIevadiet, par cik km/h bremzēt BMW: ");
 		    double bremzesana1 = scanner.nextDouble();
-		    auto1.bremzet(bremzesana1);
+		    auto1.bremzet(bremzesana1); // Bremzējam ar lietotāja ievadīto vērtību
 
 		    System.out.print("Ievadiet, par cik km/h bremzēt Audi: ");
 		    double bremzesana2 = scanner.nextDouble();
