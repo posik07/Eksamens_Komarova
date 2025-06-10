@@ -19,6 +19,44 @@ public class Piemers1 {
 			this.gads = gads;
 			this.atrums = 0.0; //sākumā automašīna nestāv
 		}
+		
+		// Metode ātruma palielināšanai
+		public void paatrinatAt(double paliel) {
+			this.atrums = paliel; // palielinām pašreizējo ātrumu
+			
+		System.out.println("Automašīna paātrina. Ātrums "+this.atrums+
+				" km/h");
+		}
+		
+		// Metode bremzēšanai
+		public void bremzet(double samaz) {
+			// Samazinām ātrums. Pārbaudām, vai ātrums nav negatīvs
+			// Ja ir, tad iestatam uz 0
+			this.atrums -= samaz;
+			if(this.atrums < 0) {
+				this.atrums = 0;
+			}
+			
+			System.out.println("Mašīna bremzē. Ātrums: "+this.atrums+
+					" km/h");
+		}
+			// Metode iegušanai
+			public String getMarka() {
+			      return this.marka;  // Atgriežam privāto lauku vērtību
+			    }
+
+			    public String getModelis() {
+			      return this.modelis;
+			    }
+
+			    public int getGads() {
+			      return this.gads;
+			    }
+
+			    public double getAtrums() {
+			      return this.atrums;
+			    }
+		
 	}
 
 }
