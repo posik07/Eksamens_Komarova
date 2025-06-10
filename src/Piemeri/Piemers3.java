@@ -39,7 +39,44 @@ public class Piemers3 {
 			this.r = r;
 		}
 		
+		// Realizē abstrakto metodi laukuma aprēķinam
+        @Override
+        public double aprekinatLauk() {
+            return Math.PI * r * r;
+	}
+     // Realizē abstrakto metodi perimetra aprēķinam
+        @Override
+        public double aprekinatP() {
+            return 2 * Math.PI * r; 
+	}
+        public double getRaduiss() {
+        	return r;
+        }
+	}
+	
+	//Aapkšklase taisnstūris
+	static class Taisnsturis extends Forma {
+		private double garums;
+		private double platums;
 		
+		//Komstruktors taisnsturim
+		public Taisnsturis(String krasa, double garums, double platums) {
+			super(krasa);//izsauc vecāku konstruktoru
+			this.garums  = garums;
+			this.platums = platums;
+		}
+		
+		// Realizē laukuma aprēķinu
+        @Override
+        public double aprekinatLauk() {
+            return garums * platums;  // garums × platums
+        }
+        
+        // Realizē perimetra aprēķinu
+        @Override
+        public double aprekinatP() {
+            return 2 * (garums + platums);  // 2 × (garums + platums)
+        }
 	}
 
 	public static void main(String[] args) {
