@@ -52,6 +52,38 @@ public class Piemers2 {
 	        	public void riet() {
 	        		System.out.println(getVards() + " rej: Gaf-gaf!! >:O");
 	        	}
+	        	
+	        	// Metodes pārrakstišana override, maina vecāku klase uzvedību
+	        	@Override
+	        	public void paraditInfo() {
+	        		System.out.println("Suns: " + getVards() +
+	        				", Vecums: " + getVecums() +
+	        				" gadi, Šķirne: " + skirne);
+	        	}
+	        }
+	        
+	        //vēl viena apakšklase Kakis
+	        static class Kakis extends Dzivnieks {
+	        	private boolean irMaja; 
+	        	
+	        	public Kakis(String vards, int vecums, boolean irMaja) {
+	        		super(vards, vecums); // izsauc vecaku konstruktoru
+	        		this.irMaja = irMaja;
+	        	}
+	        	
+	        	//Specifiska metode kaķiem
+	        	public void maukat() {
+	        		System.out.println(getVards() + " maukā: Ņjau! Ņjau! <3");
+	            }
+	        	
+	        	// Pārraksta vecāku metodi
+	            @Override
+	            public void paraditInfo() {
+	                String tips = irMaja ? "mājkaķis" : "savvaļas kaķis";
+	                
+	                System.out.println("Kaķis: " + getVards() + 
+	                		", Vecums: " + getVecums() + " gadi,"
+	                				+ " Tips: " + tips);
 	        }
 	}
 
