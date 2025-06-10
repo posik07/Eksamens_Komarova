@@ -1,4 +1,7 @@
 package Piemeri;
+
+import java.util.Scanner;
+
 // Piemērs 1: Klases un objekti
 
 public class Piemers1 {
@@ -40,7 +43,7 @@ public class Piemers1 {
 			System.out.println("Mašīna bremzē. Ātrums: "+this.atrums+
 					" km/h");
 		}
-			// Metode iegušanai
+			// Metode ieg
 			public String getMarka() {
 			      return this.marka;  // Atgriežam privāto lauku vērtību
 			    }
@@ -57,6 +60,44 @@ public class Piemers1 {
 			      return this.atrums;
 			    }
 		
+		public void izvaditInfo() {
+			System.out.println("Mašīna: "+this.marka+" "+ this.modelis + 
+                    " (" + this.gads + ".gads), ātrums: " 
+					+ this.atrums + " km/h");
+ 
+
+		}
+		
+		public static void main(String[] args) {
+			Automasina auto1 = new Automasina("BMW", "X5", 2020);
+			Automasina auto2 = new Automasina("Audi", "A4", 2019);
+			
+			Scanner scanner = new Scanner(System.in);
+			
+			System.out.print("\nIevadiet, par cik km/h paātrināt BMW: ");
+		    double paatrinajums1 = scanner.nextDouble();
+		    auto1.paatrinatAt(paatrinajums1);
+
+		    System.out.print("Ievadiet, par cik km/h paātrināt Audi: ");
+		    double paatrinajums2 = scanner.nextDouble();
+		    auto2.paatrinatAt(paatrinajums2);
+
+		    // Lietotāja ievade bremzēšanai
+		    System.out.print("\nIevadiet, par cik km/h bremzēt BMW: ");
+		    double bremzesana1 = scanner.nextDouble();
+		    auto1.bremzet(bremzesana1);
+
+		    System.out.print("Ievadiet, par cik km/h bremzēt Audi: ");
+		    double bremzesana2 = scanner.nextDouble();
+		    auto2.bremzet(bremzesana2);
+
+		    // Gala rezultāti
+		    System.out.println("\nGala informācija:");
+		    auto1.izvaditInfo();
+		    auto2.izvaditInfo();
+
+		    scanner.close();
+		}
 	}
 
 }
