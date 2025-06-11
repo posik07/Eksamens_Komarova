@@ -10,17 +10,37 @@
 - **Piemers2.java** - Piemērs par pārmantošanu
 - **Piemers3.java** - Piemērs par abstrakciju un polimorfisms izmantošanu
 
-## Kā palaist testu
+## OOPTest.java
+OOPTest ir Java klase, kas veido grafisku testu par objektorientēto programmēšanu (OOP). Tā izmanto JOptionPane logus, lai uzdotu lietotājam 10 jautājumus ar atbilžu variantiem un beigās parāda testa rezultātus.
 
-1. Kompilējiet visus Java failus:
-   ```
-   javac src/*.java
-   ```
+### Galvenās funkcijas:
 
-2. Palaidiet galveno testa klasi:
-   ```
-   java -cp src OOPTests
-   ```
+- izveidotJautajumus() – izveido jautājumu sarakstu ar atbildēm un norāda pareizo variantu.
+- saktTestu() – sāk testu, rāda katru jautājumu un apkopo lietotāja atbildes.
+- raditRezultatus() – analizē atbildes, parāda, kuras bija pareizas/nepareizas, un aprēķina kopējo rezultātu procentos.
+- sadalitTekstu() – sadala garu tekstu vairākos gabalos, lai tas ērti rādītos JOptionPane logā.
+- main() – programmas sākumpunkts, kas inicializē testu.
+
+![Снимок экрана 2025-06-11 041620](https://github.com/user-attachments/assets/c1c1689e-e9ff-4dbe-a786-b10e39ca6cd8)
+![Снимок экрана 2025-06-11 041636](https://github.com/user-attachments/assets/c82baf4d-3fdc-4792-8a77-e4284f364f09)
+![Снимок экрана 2025-06-11 041647](https://github.com/user-attachments/assets/988d01c0-e547-4f20-804e-8a233d14ab5a)
+![Снимок экрана 2025-06-11 041716](https://github.com/user-attachments/assets/d15d1bac-1e73-46c9-bf07-ba868a1b4f91)
+
+## Question.java
+Question ir palīgklase, kas apraksta vienu jautājumu testā. Tā tiek izmantota OOPTest klasē, lai glabātu datus par katru jautājumu.
+
+Tā satur:
+- jautajums – jautājuma teksts.
+- opcijas – masīvs ar četriem atbilžu variantiem.
+- pareizaAtbilde – pareizās atbildes numurs (no 1 līdz 4).
+
+Metodes:
+- getJautajums() – atgriež jautājuma tekstu.
+- getOpcijas() – atgriež visus atbilžu variantus.
+- getPareizaAtbilde() – atgriež pareizās atbildes numuru.
+
+![Снимок экрана 2025-06-11 041537](https://github.com/user-attachments/assets/6cfad3b1-58dd-4b94-b143-5ad18320c54a)
+
 
 ## Testa saturs
 Sākumā testu mūs sagaida logs, kas apraksta programmu. Cik daudz jautājumu, atbildes varianti un kā pareizi nokārtot testu.
